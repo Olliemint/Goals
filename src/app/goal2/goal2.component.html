@@ -1,0 +1,14 @@
+<div>
+    <h1>My Goals</h1>
+    <ul>
+        <div *ngFor="let goal of goals2; let i=index">
+      <li appStrikethrough>{{goal.name}} due on {{goal.completeDate |date|uppercase}}</li>
+
+        <button (click)='toggleDetails(i)'>Toggle Details</button>
+        <app-goal2detail *ngIf="goal.showDescription" [goal]="goal" (isComplete)="completeGoal($event,i)"></app-goal2detail>
+  
+      
+    </div>
+    </ul>
+    <p *ngIf="goals2.length >5"> they are many</p>
+  </div>
