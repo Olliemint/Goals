@@ -16,6 +16,12 @@ export class Goal2Component implements OnInit {
     new Goal2(5,'Watch finding nemo5','Still watching5', new Date(2020,3,18)),
     new Goal2(6,'Watch finding nemo6','Still watching6', new Date(2020,3,19))
   ]
+  addNewGoal(goal: Goal2){
+    let goallenght= this.goals2.length;
+    goal.id = goallenght +1;
+    goal.completeDate = new Date(goal.completeDate)
+    this.goals2.push(goal)
+  }
 
   completeGoal(isComplete: any,index: number){
     if (isComplete){
